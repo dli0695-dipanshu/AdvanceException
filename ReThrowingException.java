@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ReThrowingException {
     static void performDivision(int numerator,int denominator){
         if(denominator==0)
@@ -16,7 +18,12 @@ public class ReThrowingException {
 
     public static void main(String[] args) {
        try {
-            calculate(3,0);
+           Scanner scanner=new Scanner(System.in);
+           System.out.println("Enter the numerator");
+           int numerator=scanner.nextInt();
+           System.out.println("Enter the Denominator");
+           int denominator=scanner.nextInt();
+            calculate(numerator,denominator);
         }
         catch (ArithmeticException e){
             System.out.println(e.getMessage());
